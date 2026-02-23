@@ -15,8 +15,8 @@ These files add an additional feature to Cinnamon Desklets in Linux Mint, automa
 
 ---
 ## Installation
-1. Navigate to 'src':
-  ```cd src```
+1. Navigate to 'src' (or use relative path from current directory):
+  ```cd src``` | ```cd full/path/to/cinnamon-desklet-swap-sides/src```
 
 2. Make the install script executable:
   ```chmod +x install.sh```
