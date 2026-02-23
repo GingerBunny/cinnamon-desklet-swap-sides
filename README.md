@@ -6,8 +6,6 @@ These files add an additional feature to Cinnamon Desklets in Linux Mint, automa
 ---
 ## Advice
 
-* Desklet grid spacing should be set to 20
-* Only works properly if desklets are in a single vertical column
 * Desktop icons may be hidden or moved by this if they are in the way.
 * Still works if desklets are locked
 * It's a bit jank!

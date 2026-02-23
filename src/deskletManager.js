@@ -86,11 +86,6 @@ function init() {
 
         deskletsLoaded = true;
 
-        const children = Main.deskletContainer.actor.get_children();
-        children.forEach(child => {
-            child.x = 20;
-        });
-
         if (global.settings.get_boolean('desklet-alternate-side'))
         {
             _onDeskletAlternateSidesIntervalChanged();
@@ -117,15 +112,16 @@ function _onDeskletAlternateSidesIntervalChanged() {
 
 // Moves Desklets as a whole from one side of screen to other.
 function moveDesklets() {
-    const padding = 20;
-    const container_width = global.screen_width;
-    global.log(container_width);
+    const screen_width = global.screen_width;
     const children = Main.deskletContainer.actor.get_children();
     children.forEach(child => {
-        if (child.x == 20) {
-            child.x = container_width - padding - child.width;
-        } else {
-            child.x = 20;
+        const xpos = child.x;
+
+        if (xpos <= screen_width / 2) {
+            child.x = (screen_width - xpos) - child.width;
+        }
+        else {
+            child.x = screen_width - (child.width + xpos);
         }
     });
 }
